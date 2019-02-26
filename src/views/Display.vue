@@ -10,7 +10,7 @@
                <div class="card card-body">
     <h5 class="card-title"> {{newText.name}} </h5>
     <h6 class="card-subtitle mb-2">  {{newText.text}}</h6>
-     <span class="date">On {{newText.date}}</span>
+     <span class="date"> {{newText.date}}</span>
     <i class="fa fa-trash fa-lg" aria-hidden="true"
                   v-on:click="removeText(newText)"></i>
                   <br>
