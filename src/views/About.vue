@@ -15,7 +15,7 @@
             <li class="list-group-item" id="wind"> Wind: </li>
         </ul>
       
-      <form v-on:submit.prevent="onSubmit" id="weather-lookup">
+      <form  id="weather-lookup">
       <div class="textBox">
         <label for="txt-weather"></label>
         <p>Enter Your City</p>
