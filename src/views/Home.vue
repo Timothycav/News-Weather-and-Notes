@@ -63,7 +63,8 @@ export default {
          title: 'texts',
               newText: {
                  name: '',
-                 text: ''
+                 text: '',
+                 date: ''
               }
        
        
@@ -79,7 +80,7 @@ export default {
     methods: {
       addText: function() {
         this.newText.created_at = moment().format('DD MMM, YYYY')
-      textsRef.push({name:this.newText.name, text:this.newText.text, edit: false});
+      textsRef.push({name:this.newText.name, text:this.newText.text, edit: false, date:this.newText.created_at});
 
         this.newText.name = '';
         this.newText.text = '';
