@@ -10,6 +10,7 @@
                <div class="card card-body">
     <h5 class="card-title"> {{newText.name}} </h5>
     <h6 class="card-subtitle mb-2">  {{newText.text}}</h6>
+     <span class="date">On {{newText.created_at}}</span>
     <i class="fa fa-trash fa-lg" aria-hidden="true"
                   v-on:click="removeText(newText)"></i>
                   <br>
@@ -47,7 +48,7 @@
   import Home from '../views/Home.vue'
   import {textsRef} from '../views/Home.vue'
   import Header from '../components/Header'
- 
+  import moment from 'moment'
 export default {
       firebase: {
     texts: textsRef

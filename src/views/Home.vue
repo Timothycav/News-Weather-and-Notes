@@ -33,7 +33,8 @@
 
 <script>
 
-
+  
+import moment from 'moment'
 import Firebase from 'firebase'
 // @ is an alias to /src
 //import Posts from '../components/posts'
@@ -77,6 +78,7 @@ export default {
    },
     methods: {
       addText: function() {
+        this.newText.created_at = moment().format('DD MMM, YYYY')
       textsRef.push({name:this.newText.name, text:this.newText.text, edit: false});
 
         this.newText.name = '';
