@@ -25,7 +25,7 @@
       <div>
         <button
           title="what city"
-          type="submit"
+          type="button"
           class="btn btn-info btn-block"
           value="Weather"
           v-on:click="getExternel"
