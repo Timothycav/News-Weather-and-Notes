@@ -62,6 +62,7 @@ export default {
       newtext: {
         name: '',
         text: '',
+        created_at:'',
         edit: ''
       },
     
