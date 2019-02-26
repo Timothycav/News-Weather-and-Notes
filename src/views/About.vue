@@ -70,7 +70,7 @@
         res
           .json()
           .then(data => {
-            console.log(data);
+            //console.log(data);
           //  let output = "";
            
             /*  output += `<p>${data.main.temp}  </br> 

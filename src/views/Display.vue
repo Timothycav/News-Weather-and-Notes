@@ -42,7 +42,7 @@
 
 
 <script>
-  import firebase from 'firebase'
+  
   import Firebase from 'firebase'
   import Home from '../views/Home.vue'
   import {textsRef} from '../views/Home.vue'
