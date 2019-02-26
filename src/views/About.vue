@@ -29,6 +29,7 @@
           class="btn btn-info btn-block"
           value="Weather"
           v-on:click="getExternel"
+          return: false
         >
           Weather Data
         </button>
