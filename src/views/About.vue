@@ -44,6 +44,7 @@
 
   <div class="container center">
     <div class="row">
+       <div class="col-md-6 mid">
        <button
           title="get news"
           type="button"
@@ -54,7 +55,7 @@
         >
           Get News
         </button>
-      <div class="col-md-6 mid">
+     
         <div class="card card-body">
           <div class="news"></div>
            <div class="newstitle"></div>
