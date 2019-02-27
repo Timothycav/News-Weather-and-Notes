@@ -58,17 +58,17 @@
      
         <div class="card card-body">
           <div class="news"></div>
-           <div class="newstitle"></div>
+           <div class="newstitle card-title"></div>
              <div class="description"></div>
-              <a href="" id="link">Full Story Here</a>
-               <div> <img src="" id="news_img"></div>
+              <a href="" class="btn btn-primary" id="link">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img"></div>
         </div>
          <div class="card card-body">
           <div class="news2"></div>
-           <div class="newstitle2"></div>
+           <div class="newstitle2 card-title"></div>
              <div class="description2"></div>
-              <a href="" id="link2">Full Story Here</a>
-               <div> <img src="" id="news_img2"></div>
+              <a href="" class="btn btn-primary" id="link2">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img2"></div>
         </div>
       </div>
     </div>
