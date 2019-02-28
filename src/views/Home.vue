@@ -3,7 +3,7 @@
      
  
   <Header />
-
+<div id="datePlace"></div>
    
      <div class="contaner text-center"> 
 
@@ -65,7 +65,7 @@ export default {
                  name: '',
                  text: '',
                  date: ''
-              }
+              },
        
        
       
@@ -88,8 +88,13 @@ export default {
       
     },
    
-    }
+    },
+    created:function(){
+
    
+    let today = new Date();
+    document.getElementById('datePlace').innerHTML(today.toLocaleString);
+   }  
     
   }
 

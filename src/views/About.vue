@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <Header />
+    <div id="datePlace"></div>
  <div class="container center">
           <div class="row">
             <div class="col-md-6 mid">
@@ -206,7 +207,8 @@
    created:function(){
 
     this.getNews()
-
+    let today = new Date();
+    document.getElementById('datePlace').innerHTML(today);
    }  
   
  }
