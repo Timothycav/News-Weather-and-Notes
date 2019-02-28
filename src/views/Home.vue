@@ -89,9 +89,16 @@ export default {
        this.$router.replace('/display')
       
     },
+      showDate: function(){
+        let date = moment().format('dddd, MMMM Do YYYY, h:mm a')
+        document.getElementById('datePlace').innerHTML = date;
+      }
+    },
+   created:function(){
+
+    this.showDate()
    
-    }
-   
+   }  
     
   }
 
