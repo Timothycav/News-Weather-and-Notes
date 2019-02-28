@@ -207,10 +207,9 @@
    created:function(){
 
     this.getNews()
-    let today = new Date();
-    document.getElementById('datePlace').innerHTML= today.toDateString;
+    $('#datePlace').text(new Date().getFullYear());
    }  
-  
+ 
  }
  </script>
  

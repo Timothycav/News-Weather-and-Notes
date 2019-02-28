@@ -90,11 +90,10 @@ export default {
    
     },
     created:function(){
-
+ $('#datePlace').text(new Date().getFullYear());
    
-    let today = new Date();
-    document.getElementById('datePlace').innerHTML= today.toLocaleString;
-   }  
+   
+   } 
     
   }
 
