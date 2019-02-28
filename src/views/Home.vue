@@ -93,7 +93,7 @@ export default {
 
    
     let today = new Date();
-    document.getElementById('datePlace').innerHTML(today.toLocaleString);
+    document.getElementById('datePlace').innerHTML= today.toLocaleString;
    }  
     
   }

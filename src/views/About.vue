@@ -208,7 +208,7 @@
 
     this.getNews()
     let today = new Date();
-    document.getElementById('datePlace').innerHTML(today);
+    document.getElementById('datePlace').innerHTML= today.toDateString;
    }  
   
  }
