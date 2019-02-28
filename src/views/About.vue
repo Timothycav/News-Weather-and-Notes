@@ -207,7 +207,7 @@
    created:function(){
 
     this.getNews()
-    $('#datePlace').text(new Date().getFullYear());
+   
    }  
  
  }

@@ -88,12 +88,8 @@ export default {
       
     },
    
-    },
-    created:function(){
- $('#datePlace').text(new Date().getFullYear());
+    }
    
-   
-   } 
     
   }
 
