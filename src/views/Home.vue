@@ -88,8 +88,13 @@ export default {
       
     },
    
-    }
+    },
+   created:function(){
+     let date =  moment().format('dddd, MMMMM Do YYYY, h:mm a');
+     document.getElementById("datePlace").innerHTML = date;
+ 
    
+   }  
     
   }
 
