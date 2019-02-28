@@ -53,6 +53,9 @@ var config = {
    const db = app.database()
 
  export const textsRef = db.ref('texts')
+
+   let date =  moment().format('dddd, MMMMM Do YYYY, h:mm a');
+     document.getElementById("datePlace").innerHTML = date;
 export default {
   name: 'home',
    firebase: {
@@ -88,13 +91,8 @@ export default {
       
     },
    
-    },
-   created:function(){
-     let date =  moment().format('dddd, MMMMM Do YYYY, h:mm a');
-     document.getElementById("datePlace").innerHTML = date;
- 
+    }
    
-   }  
     
   }
 

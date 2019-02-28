@@ -79,6 +79,7 @@
 </template>
  <script>
  // document.getElementById('button3').addEventListener('click', getExternal)
+ 
  import Header from '../components/Header'
  export default {
      data() {
