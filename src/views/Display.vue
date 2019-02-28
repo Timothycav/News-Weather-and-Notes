@@ -107,10 +107,7 @@ export default {
 max-width: 100%  !important;
 
 }
-.title {
-  
 
-}
 .btn {
     margin: 7px;
 }
