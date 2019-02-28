@@ -90,8 +90,8 @@ export default {
       
     },
       showDate: function(){
-        let date = moment().format('dddd, MMMM Do YYYY, h:mm a')
-        document.getElementById('datePlace').innerHTML = date;
+        
+        document.getElementById('datePlace').innerHTML =  moment().format('dddd, MMMM Do YYYY, h:mm a');
       }
     },
    created:function(){
