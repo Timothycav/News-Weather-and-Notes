@@ -45,7 +45,7 @@
   <div class="container center">
     <div class="row">
        <div class="col-md-6 mid">
-      <button
+   <!--   <button
           title="get news"
           type="button"
           class="btn btn-info btn-block"
@@ -54,7 +54,7 @@
           return: false
         >
           Get News
-        </button>
+        </button>-->
      
         <div class="card card-body">
           <div class="news"></div>
@@ -201,8 +201,14 @@
    //   });
 
    },
-   }    
-     
+   
+   },  
+   created:function(){
+
+    this.getNews()
+
+   }  
+  
  }
  </script>
  
