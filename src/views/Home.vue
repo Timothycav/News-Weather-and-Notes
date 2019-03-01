@@ -32,7 +32,10 @@
 </template>
 
 <script>
-
+        let val;
+        const today = new Date();
+        val = today.getDate();
+        document.getElementById("datePlace").innerHTML = val;
   
 import moment from 'moment'
 import Firebase from 'firebase'
@@ -90,17 +93,10 @@ export default {
       
     },
       showDate: function(){
-        let val;
-        const today = new Date();
-        val = today.getDate();
-        document.getElementById('datePlace').innerHTML = val;
+       
       }
     },
-    created:function(){
-
-    this.showDate()
-   
-   }  
+  
     
   }
 
