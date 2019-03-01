@@ -90,11 +90,13 @@ export default {
       
     },
       showDate: function(){
-        let date = Date();
-        document.getElementById('datePlace').innerHTML = date;
+        let val;
+        const today = new Date();
+        val = today.getDate();
+        document.getElementById('datePlace').innerHTML = val;
       }
     },
-   created:function(){
+    created:function(){
 
     this.showDate()
    
