@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <Header />
-    <div id="datePlace"></div>
+  
  <div class="container center">
           <div class="row">
             <div class="col-md-6 mid">
