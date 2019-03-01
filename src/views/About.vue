@@ -123,11 +123,7 @@
                    let txt_city =  document.getElementById("txt-city");
                    txt_city.value = '';
 
-                    let val;
-    const today = new Date();
-    val = today.toLocaleString();
-    
-    document.getElementById("datePlace").innerHTML = val;
+                   
           })
           .catch(function(err) {
             console.log(err);
@@ -210,11 +206,22 @@
    //   });
 
    },
-   
+   showDate() {
+ let val;
+    const today = new Date();
+    val = today.toLocaleString();
+    
+    document.getElementById("datePlace").innerHTML = val;
+   }
    },  
    created:function(){
 
     this.getNews()
+   
+   }, 
+    created:function(){
+
+    this.showDate()
    
    }  
  
