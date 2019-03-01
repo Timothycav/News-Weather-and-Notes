@@ -3,7 +3,7 @@
      
  
   <Header />
-<div id="datePlace"></div>
+<div id="datePlace">{{this.day}}</div>
    
      <div class="contaner text-center"> 
 
@@ -72,7 +72,7 @@ export default {
                  date: ''
               },
        
-       
+       day: ''
       
     
     }
@@ -93,10 +93,16 @@ export default {
       
     },
       showDate: function(){
-       
+       this.day = moment().format('DD MMM, YYYY')
+
+       this.day = '';
       }
     },
-  
+  created:function(){
+
+    this.showDate()
+   
+   }  
     
   }
 
