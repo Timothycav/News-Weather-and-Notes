@@ -3,7 +3,7 @@
      
  
   <Header />
-<div id="datePlace">{{this.day}}</div>
+
    
      <div class="contaner text-center"> 
 
@@ -95,11 +95,7 @@ export default {
        this.day = '';
       }
     },
-  created:function(){
-
-    this.showDate()
-   
-   }  
+ 
     
   }
 

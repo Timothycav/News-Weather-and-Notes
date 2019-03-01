@@ -8,6 +8,7 @@
 
             
                 <ul id="box" class="">
+                  <span id="datePlace"></span>
              <h3>{{this.city}}     <img id="icon2" src=""> </h3>
           <li class="list-group-item" id="temp"> Current Temp </li>
           <li class="list-group-item" id="des"> Current Conditions </li>
@@ -79,7 +80,7 @@
 </template>
  <script>
  // document.getElementById('button3').addEventListener('click', getExternal)
- 
+
  import Header from '../components/Header'
  export default {
      data() {
@@ -121,6 +122,12 @@
                      document.getElementById("icon2").src = iconurl;
                    let txt_city =  document.getElementById("txt-city");
                    txt_city.value = '';
+
+                    let val;
+    const today = new Date();
+    val = today.toLocaleString();
+    
+    document.getElementById("datePlace").innerHTML = val;
           })
           .catch(function(err) {
             console.log(err);
