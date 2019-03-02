@@ -8,7 +8,7 @@
 
             
                 <ul id="box" class="">
-                  <span id="datePlace"></span>
+                  <span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span>
              <h3>{{this.city}}     <img id="icon2" src=""> </h3>
           <li class="list-group-item" id="temp"> Current Temp </li>
           <li class="list-group-item" id="des"> Current Conditions </li>
@@ -206,24 +206,18 @@
    //   });
 
    },
-   showDate() {
- let val;
-    const today = new Date();
-    val = today.toLocaleString();
-    
-    document.getElementById("datePlace").innerHTML = val;
-   }
+  moment: function(){
+    return moment();
+  }
+ 
+   
    },  
    created:function(){
 
     this.getNews()
    
    }, 
-    created:function(){
-
-    this.showDate()
-   
-   }  
+  
  
  }
  </script>
