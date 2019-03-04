@@ -72,6 +72,20 @@
               <a href="" class="btn btn-primary" id="link2">Full Story Here</a>
                <div> <img class="card-img-top" src="" id="news_img2"></div>
         </div>
+         <div class="card card-body">
+          <div class="news3"></div>
+           <div class="newstitle3 card-title"></div>
+             <div class="description3"></div>
+              <a href="" class="btn btn-primary" id="link3">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img3"></div>
+        </div>
+         <div class="card card-body">
+          <div class="news4"></div>
+           <div class="newstitle4 card-title"></div>
+             <div class="description4"></div>
+              <a href="" class="btn btn-primary" id="link4">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img4"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -162,20 +176,20 @@ import moment from 'moment'
       let link2= data.articles[1].url;
       document.getElementById("link2").href = link2;
 
-      /*    $('.news3').text(data.articles[2].source.name);
+         $('.news3').text(data.articles[2].source.name);
           $('.newstitle3').text(data.articles[2].title);
           $('.description3').text(data.articles[2].description);
           /*  $('#news_img').src(data.articles[0].urlToImage);*/
-       /*   document.getElementById("news_img3").src=data.articles[2].urlToImage;
+         document.getElementById("news_img3").src=data.articles[2].urlToImage;
 
-          let link3= data.articles[2].url;
+         let link3= data.articles[2].url;
           document.getElementById("link3").href = link3;
 
           $('.news4').text(data.articles[3].source.name);
           $('.newstitle4').text(data.articles[3].title);
           $('.description4').text(data.articles[3].description);
           /*  $('#news_img').src(data.articles[0].urlToImage);*/
-      /*    document.getElementById("news_img4").src=data.articles[3].urlToImage;
+         document.getElementById("news_img4").src=data.articles[3].urlToImage;
 
           let link4= data.articles[3].url;
           document.getElementById("link4").href = link4;
