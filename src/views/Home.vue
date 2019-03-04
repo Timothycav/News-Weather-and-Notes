@@ -10,6 +10,7 @@
        <div class="row align-items-center">
 
          <div class="col-sm-12 col-lg-10">
+            <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
  <h1 class="home">Home</h1>
        <form class="form_area" >
           <div class="form-group text" v-on:submit.prevent="addText">
@@ -89,11 +90,9 @@ export default {
        this.$router.replace('/display')
       
     },
-      showDate: function(){
-       this.day = moment().format('DD MMM, YYYY')
-
-       this.day = '';
-      }
+      moment: function(){
+    return moment();
+  }
     },
  
     
