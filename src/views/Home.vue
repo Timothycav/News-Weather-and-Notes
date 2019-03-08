@@ -39,7 +39,7 @@
 
 <script>
        
-  
+import firebase from 'firebase'
 import moment from 'moment'
 import Firebase from 'firebase'
 // @ is an alias to /src
