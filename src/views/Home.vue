@@ -13,7 +13,7 @@
             <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
  <h1 class="home">Notes and Weather</h1>
  <div v-if="!user">
-   <form>
+   <form v-on:submit.prevent="signIn" >
   <div class="form-group">
     <label for="exampleInputEmail1">Email </label>
     <input type="email" class="form-control" id="exampleInputEmail1"  v-model="email" placeholder="Enter email">
@@ -24,7 +24,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
   </div>
   
-  <button class="btn btn-primary" v-on:click="signIn">Sign In</button>
+  <button class="btn btn-primary" type="submit" v-on:click="signIn">Sign In</button>
 </form>
   
  </div>
