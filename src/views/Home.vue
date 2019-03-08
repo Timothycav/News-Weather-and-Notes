@@ -24,9 +24,9 @@
     <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" v-on:click="signIn">Sign In</button>
 </form>
-   <button class="btn btn-primary" v-on:click="signIn">Sign In</button>
+  
  </div>
  <div v-else>
        <form class="form_area" >
