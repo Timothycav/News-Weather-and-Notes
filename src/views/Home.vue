@@ -13,6 +13,19 @@
             <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
  <h1 class="home">Notes and Weather</h1>
  <div v-if="!user">
+   <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email </label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  v-model="email" placeholder="Enter email">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
    <button class="btn btn-primary" v-on:click="signIn">Sign In</button>
  </div>
  <div v-else>
@@ -102,7 +115,7 @@ export default {
    signIn: function() {
         firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
           (user) => {
-            this.$router.replace('display')
+            this.$router.replace('/')
           },
           (err) => {
             alert('Oops. ' + err.message)
