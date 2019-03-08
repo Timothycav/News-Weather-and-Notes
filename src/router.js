@@ -6,7 +6,7 @@ import Display from './views/Display.vue'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
  // mode:'history',
   routes: [
     {
@@ -18,7 +18,10 @@ export default new Router({
     {
       path: '/display',
       name: 'display',
-      component: Display
+      component: Display,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/about',
@@ -29,4 +32,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
+  
 })
+router.beforeEach((to, from, next) => {
+  let currentUser = firebase.auth().currentUser;
+  let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if (requiresAuth && !currentUser) next('/')
+  else if (!requiresAuth && currentUser) next('display')
+  else next()
+})
+export default router

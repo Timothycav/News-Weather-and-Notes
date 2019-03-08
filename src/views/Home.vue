@@ -11,7 +11,11 @@
 
          <div class="col-sm-12 col-lg-10">
             <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
- <h1 class="home">Home</h1>
+ <h1 class="home">Notes and Weather</h1>
+ <div v-if="!user">
+   <button class="btn btn-primary" v-on:click="signIn">Sign In</button>
+ </div>
+ <div v-else>
        <form class="form_area" >
           <div class="form-group text" v-on:submit.prevent="addText">
             <label for="itemTitle" id="firstTitle">Title</label>
@@ -25,6 +29,7 @@
   </div> 
    
        </form>
+       </div>
          </div>
        </div>
     
@@ -70,9 +75,10 @@ export default {
                  date: ''
               },
        
-       day: ''
+       day: '',
       
-    
+          email: '',
+          password: ''
     }
   },
  components: {
@@ -92,7 +98,17 @@ export default {
     },
       moment: function(){
     return moment();
-  }
+  },
+   signIn: function() {
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+          (user) => {
+            this.$router.replace('display')
+          },
+          (err) => {
+            alert('Oops. ' + err.message)
+          }
+        );
+      }
     },
  
     
