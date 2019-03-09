@@ -11,7 +11,7 @@
 
          <div class="col-sm-12 col-lg-10">
             <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
- <h1 class="home">Notes and Weather</h1>
+ <h1 class="home">Notes</h1>
 
 
 

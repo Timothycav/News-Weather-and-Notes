@@ -38,13 +38,13 @@
         </div>
         </div>
     </div>
-    
+       <button class="btn btn-danger" v-on:click="logout">Logout</button>
     </div>
 </template>
 
 
 <script>
-  
+  import firebase from 'firebase'
   import Firebase from 'firebase'
   import About from '../views/About.vue'
   import {textsRef} from '../views/About.vue'
@@ -75,6 +75,11 @@ export default {
   },
    methods: {
      
+       logout: function() {
+       firebase.auth().signOut().then(() => {
+        this.$router.replace('/')
+      })
+    },
       removeText: function (newText) {
         textsRef.child(newText['.key']).remove();
        

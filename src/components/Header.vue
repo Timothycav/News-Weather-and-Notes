@@ -17,16 +17,10 @@
         <ul class="navbar-nav">
           <li class="nav-item active">
             <router-link to="/">Weather / News</router-link>
+            </li>
+        
 
-            |
-          </li>
-          <li class="nav-item">
-            <router-link to="/about">Add Note</router-link>
-          </li>
-
-          <li class="nav-item">
-            <router-link to="/display">Notes</router-link>
-          </li>
+        
         </ul>
       </div>
     </nav>

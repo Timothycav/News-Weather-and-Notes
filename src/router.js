@@ -7,7 +7,7 @@ import Display from './views/Display.vue'
 Vue.use(Router)
 
 let router = new Router({
- // mode:'history',
+  mode:'history',
   routes: [
     {
       path: '/',

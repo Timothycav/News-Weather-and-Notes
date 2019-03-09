@@ -89,18 +89,32 @@
       </div>
     </div>
   </div>
+ <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="email" placeholder="Enter email">
+  
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
+  </div>
  
+  <button type="button" class="btn btn-primary" v-on:click="signIn" >Sign In</button>
+</form>
   </div>
 </template>
  <script>
  
-  
+  import Firebase from 'firebase'
+  import firebase from 'firebase'
   import moment from 'moment'
   import Header from '../components/Header'
  export default {
      data() {
      return {
-    
+          email: '',
+          password: '',
        city: ''
      }
    },
@@ -223,9 +237,18 @@
    },
   moment: function(){
     return moment();
-  }
+  },
  
-   
+   signIn: function() {
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+          (user) => {
+            this.$router.replace('about')
+          },
+          (err) => {
+            alert('Oops. ' + err.message)
+          }
+        );
+      }
    },  
    created:function(){
 
