@@ -13,24 +13,9 @@
             <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
  <h1 class="home">Notes and Weather</h1>
 
- <div>
-   <form v-on:submit.prevent="signIn" >
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email </label>
-    <input type="email" class="form-control" id="exampleInputEmail1"  v-model="email" placeholder="Enter email">
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
-  </div>
-  
-  <button class="btn btn-primary" type="submit" v-on:click="signIn">Sign In</button>
-</form>
-  
- </div>
 
-<!-- <div>
+
+<div>
        <form class="form_area" >
           <div class="form-group text" v-on:submit.prevent="addText">
             <label for="itemTitle" id="firstTitle">Title</label>
@@ -44,7 +29,7 @@
   </div> 
    
        </form>
-       </div>-->
+       </div>
          </div>
        </div>
     
@@ -54,7 +39,7 @@
 
 <script>
        
-import firebase from 'firebase'
+
 import moment from 'moment'
 import Firebase from 'firebase'
 // @ is an alias to /src
@@ -92,8 +77,7 @@ export default {
        
        day: '',
       
-          email: '',
-          password: ''
+       
     }
   },
  components: {
@@ -102,7 +86,7 @@ export default {
       
    },
     methods: {
-   /*   addText: function() {
+     addText: function() {
         this.newText.created_at = moment().format('DD MMM, YYYY')
       textsRef.push({name:this.newText.name, text:this.newText.text, edit: false, date:this.newText.created_at});
 
@@ -110,20 +94,11 @@ export default {
         this.newText.text = '';
        this.$router.replace('/display')
       
-    },*/
+    },
       moment: function(){
     return moment();
   },
-   signIn: function() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('/addtext')
-          },
-          (err) => {
-            alert('Oops. ' + err.message)
-          }
-        );
-      }
+   
     },
  
     

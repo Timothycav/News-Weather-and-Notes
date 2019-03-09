@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import firebase from 'firebase'
 import Display from './views/Display.vue'
-import AddText from './views/AddText.vue'
+
 Vue.use(Router)
 
 let router = new Router({
@@ -21,14 +21,7 @@ let router = new Router({
       component: Display,
      
     },
-    {
-      path: '/addtext',
-      name: 'addtext',
-      component: AddText,
-      meta: {
-        requiresAuth: true
-      }
-    },
+   
 
 
     {
@@ -42,12 +35,5 @@ let router = new Router({
   ]
   
 })
-router.beforeEach((to, from, next) => {
-  let currentUser = firebase.auth().currentUser;
-  let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  if (requiresAuth && !currentUser) next('/')
-  else if (!requiresAuth && currentUser) next('display')
-  else next()
-})
 export default router
