@@ -70,7 +70,7 @@ export default {
     }
   },
        components: {
-         Home,
+         About,
          Header
   },
    methods: {
