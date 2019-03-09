@@ -49,7 +49,7 @@ router.beforeEach((to, from, next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next('/')
-  else if (!requiresAuth && currentUser) next('addtext')
+  else if (!requiresAuth && currentUser) next('about')
   else next()
 })
 export default router
