@@ -1,145 +1,256 @@
 <template>
-  <div class="home">
-     
- 
-  <Header />
-
-   
-     <div class="contaner text-center"> 
-
-       <div class="row align-items-center">
-
-         <div class="col-sm-12 col-lg-10">
-            <p><span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span></p>
- <h1 class="home">Notes and Weather</h1>
- <div v-if="!user">
-   <form v-on:submit.prevent="signIn" >
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email </label>
-    <input type="email" class="form-control" id="exampleInputEmail1"  v-model="email" placeholder="Enter email">
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" v-model="password" placeholder="Password">
-  </div>
+  <div class="about">
+    <Header />
   
-  <button class="btn btn-primary" type="submit" v-on:click="signIn">Sign In</button>
-</form>
-  
- </div>
- <div v-else>
-       <form class="form_area" >
-          <div class="form-group text" v-on:submit.prevent="addText">
-            <label for="itemTitle" id="firstTitle">Title</label>
-            <input type="text" id="itemTitle" class="form-control" v-model="newText.name">
+ <div class="container center">
+          <div class="row">
+            <div class="col-md-6 mid">
+              <h3>News and Weather</h3>
+            
+                <ul id="box" class="">
+                  <span>{{moment().format('MMMM Do YYYY, h:mm:ss a')}}</span>
+             <h3>{{this.city}}     <img id="icon2" src=""> </h3>
+          <li class="list-group-item" id="temp"> Current Temp </li>
+          <li class="list-group-item" id="des"> Current Conditions </li>
+          <li class="list-group-item" id="pressure"> Pressure:</li>
+          <li class="list-group-item" id="humidity"> Humidity: </li>
+            <li class="list-group-item" id="wind"> Wind: </li>
+        </ul>
+      
+      <form  id="weather-lookup">
+      <div class="textBox">
+        <label for="txt-weather"></label>
+        <p>Enter Your City</p>
+        <input type="text" class="form-control" id="txt-city" placeholder="Enter a City" v-model="city" name="city" required />
+      </div>
+
+      <div>
+        <button
+          title="what city"
+          type="button"
+          class="btn btn-info btn-block"
+          value="Weather"
+          v-on:click="getExternel"
+          return: false
+        >
+          Weather Data
+        </button>
+       
+      </div>
+    </form>
+            </div>
+
           </div>
-  <div class="form-group text">
-    <label for="Textarea">Enter Text</label>
-    <textarea class="form-control" v-model="newText.text" id="Textarea1" rows="3"></textarea>
+ 
+        </div>
 
-<button type="submit" class="btn btn-primary btn-block" value="Add Text"  v-on:click="addText">Submit</button>
-  </div> 
-   
-       </form>
-       </div>
-         </div>
-       </div>
-    
-</div>
+  <div class="container center">
+    <div class="row">
+       <div class="col-md-6 mid">
+   <!--   <button
+          title="get news"
+          type="button"
+          class="btn btn-info btn-block"
+          value="News"
+          v-on:click="getNews"
+          return: false
+        >
+          Get News
+        </button>-->
+     
+        <div class="card card-body">
+          <div class="news"></div>
+           <div class="newstitle card-title"></div>
+             <div class="description"></div>
+              <a href="" class="btn btn-primary" id="link">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img"></div>
+        </div>
+         <div class="card card-body">
+          <div class="news2"></div>
+           <div class="newstitle2 card-title"></div>
+             <div class="description2"></div>
+              <a href="" class="btn btn-primary" id="link2">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img2"></div>
+        </div>
+         <div class="card card-body">
+          <div class="news3"></div>
+           <div class="newstitle3 card-title"></div>
+             <div class="description3"></div>
+              <a href="" class="btn btn-primary" id="link3">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img3"></div>
+        </div>
+         <div class="card card-body">
+          <div class="news4"></div>
+           <div class="newstitle4 card-title"></div>
+             <div class="description4"></div>
+              <a href="" class="btn btn-primary" id="link4">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
   </div>
 </template>
-
-<script>
-       
-import firebase from 'firebase'
-import moment from 'moment'
-import Firebase from 'firebase'
-// @ is an alias to /src
-//import Posts from '../components/posts'
-import Header from '../components/Header'
-
-var config = {
-    apiKey: "AIzaSyAVGWadO8KOW9XA6hl2xjD3i25IRVzcrS0",
-    authDomain: "text-d26b6.firebaseapp.com",
-    databaseURL: "https://text-d26b6.firebaseio.com",
-    projectId: "text-d26b6",
-    storageBucket: "text-d26b6.appspot.com",
-    messagingSenderId: "235321307920"
-  };
- // firebase.initializeApp(config);
-   const app = Firebase.initializeApp(config)
-   const db = app.database()
-
- export const textsRef = db.ref('texts')
-
+ <script>
  
-export default {
-  name: 'home',
-   firebase: {
-    texts: textsRef
-  },
-   data () {
-    return {
-         title: 'texts',
-              newText: {
-                 name: '',
-                 text: '',
-                 date: ''
-              },
-       
-       day: '',
-      
-          email: '',
-          password: ''
-    }
-  },
- components: {
-    // Posts,
-       Header,
-      
-   },
-    methods: {
-      addText: function() {
-        this.newText.created_at = moment().format('DD MMM, YYYY')
-      textsRef.push({name:this.newText.name, text:this.newText.text, edit: false, date:this.newText.created_at});
-
-        this.newText.name = '';
-        this.newText.text = '';
-       this.$router.replace('/display')
-      
-    },
-      moment: function(){
-    return moment();
-  },
-   signIn: function() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('/')
-          },
-          (err) => {
-            alert('Oops. ' + err.message)
-          }
-        );
-      }
-    },
- 
+  
+  import moment from 'moment'
+  import Header from '../components/Header'
+ export default {
+     data() {
+     return {
     
+       city: ''
+     }
+   },
+   components: {
+    
+     Header
+   },
+
+   methods: {
+    getExternel() {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${
+          this.city
+        }&units=imperial&APPID=3a5bd42cb39dccd2872563a469016458 `
+      ).then(res =>
+        res
+          .json()
+          .then(data => {
+            //console.log(data);
+          //  let output = "";
+           
+            /*  output += `<p>${data.main.temp}  </br> 
+              ${data.main.pressure} </br> 
+               ${data.main.humidity}
+              </p>`;*/
+             document.getElementById("temp").innerHTML = `Current Temp: ${data.main.temp} &#8457`;     
+             document.getElementById("des").innerHTML = `Current Conditions: ${data.weather[0].description}`;                              
+             document.getElementById("pressure").innerHTML = `Pressure: ${data.main.pressure}`;
+             document.getElementById("humidity").innerHTML = `Humidity: ${data.main.humidity}`;
+             document.getElementById("wind").innerHTML = `Wind: ${data.wind.speed}`;
+                  let iconcode;
+                   iconcode = data.weather[0].icon;
+                  let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                     document.getElementById("icon2").src = iconurl;
+                   let txt_city =  document.getElementById("txt-city");
+                   txt_city.value = '';
+
+                   
+          })
+          .catch(function(err) {
+            console.log(err);
+          }),
+         
+      );
+     
+    },
+   
+      getNews () {
+      let nws;
+      const url = 'https://newsapi.org/v2/top-headlines?' +
+           'country=us'+
+          '&apiKey=3f12352d060244a3909c4ac92ce96aae';
+      const req = new Request(url);
+      fetch(req)
+          .then((response) => response.json())
+      .then(data => {
+          nws = data;
+      $('.news').text(data.articles[0].source.name);
+      $('.newstitle').text(data.articles[0].title);
+      $('.description').text(data.articles[0].description);
+      /*  $('#news_img').src(data.articles[0].urlToImage);*/
+      document.getElementById("news_img").src=data.articles[0].urlToImage;
+
+      let link= data.articles[0].url;
+      document.getElementById("link").href = link;
+      /*     $('.link').text(data.articles[0].url); */
+
+      $('.news2').text(data.articles[1].source.name);
+      $('.newstitle2').text(data.articles[1].title);
+      $('.description2').text(data.articles[1].description);
+      /*  $('#news_img').src(data.articles[0].urlToImage);*/
+      document.getElementById("news_img2").src=data.articles[1].urlToImage;
+
+      let link2= data.articles[1].url;
+      document.getElementById("link2").href = link2;
+
+         $('.news3').text(data.articles[2].source.name);
+          $('.newstitle3').text(data.articles[2].title);
+          $('.description3').text(data.articles[2].description);
+          /*  $('#news_img').src(data.articles[0].urlToImage);*/
+         document.getElementById("news_img3").src=data.articles[2].urlToImage;
+
+         let link3= data.articles[2].url;
+          document.getElementById("link3").href = link3;
+
+          $('.news4').text(data.articles[3].source.name);
+          $('.newstitle4').text(data.articles[3].title);
+          $('.description4').text(data.articles[3].description);
+          /*  $('#news_img').src(data.articles[0].urlToImage);*/
+         document.getElementById("news_img4").src=data.articles[3].urlToImage;
+
+          let link4= data.articles[3].url;
+          document.getElementById("link4").href = link4;
+/*-----------------------------------------------------------------------------*/
+     /*     $('.news5').text(data.articles[4].source.name);
+          $('.newstitle5').text(data.articles[4].title);
+          $('.description5').text(data.articles[4].description);
+          /*  $('#news_img').src(data.articles[0].urlToImage);*/
+      /*    document.getElementById("news_img5").src=data.articles[4].urlToImage;
+
+          let link5= data.articles[4].url;
+          document.getElementById("link5").href = link5;
+
+          /*-----------------------------------------------------------------------------*/
+
+      /*    $('.news6').text(data.articles[5].source.name);
+          $('.newstitle6').text(data.articles[5].title);
+          $('.description6').text(data.articles[5].description);
+          /*  $('#news_img').src(data.articles[0].urlToImage);*/
+       //   document.getElementById("news_img6").src=data.articles[5].urlToImage;
+
+   //       let link6= data.articles[5].url;
+   //       document.getElementById("link6").href = link6;
+
+   //   console.log(data);
+      });
+
+   //   });
+
+   },
+  moment: function(){
+    return moment();
   }
+ 
+   
+   },  
+   created:function(){
 
-</script>
-<style scoped>
-
-.text {
+    this.getNews()
+   
+   }, 
+  
  
-  margin:10px;
-}
-.form_area {
- margin: 10px;
+ }
+ </script>
  
+ <style scoped>
  
+#box{
+  padding: 0;
 }
 .btn {
-  margin-top: 10px;
+  margin-top: 8px;
+ 
 }
-</style>
+
+.mid {
+ border: solid black 2px;
+ margin-top: 10px;
+ padding: 10px;
+}
+ </style>
+ 

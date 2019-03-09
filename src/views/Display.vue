@@ -38,6 +38,9 @@
         </div>
         </div>
     </div>
+    <div class="footer">
+      <button class="btn btn-danger" v-on:click="logout" >Sign Out</button>
+    </div>
     </div>
 </template>
 
@@ -73,7 +76,11 @@ export default {
          Header
   },
    methods: {
-     
+      logout: function() {
+       firebase.auth().signOut().then(() => {
+        this.$router.replace('/')
+      })
+    },
       removeText: function (newText) {
         textsRef.child(newText['.key']).remove();
        

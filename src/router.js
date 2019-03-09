@@ -24,6 +24,16 @@ let router = new Router({
       }
     },
     {
+      path: '/addtext',
+      name: 'addtext',
+      component: AddText,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
+
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -39,7 +49,7 @@ router.beforeEach((to, from, next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next('/')
-  else if (!requiresAuth && currentUser) next('display')
+  else if (!requiresAuth && currentUser) next('addtext')
   else next()
 })
 export default router

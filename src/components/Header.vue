@@ -16,12 +16,12 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <router-link to="/">Home</router-link>
+            <router-link to="/">Weather</router-link>
 
             |
           </li>
           <li class="nav-item">
-            <router-link to="/about">Weather</router-link>
+            <router-link to="/about">Sign In</router-link>
           </li>
 
           <li class="nav-item">
