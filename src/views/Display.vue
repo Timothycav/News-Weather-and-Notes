@@ -46,8 +46,8 @@
 <script>
   
   import Firebase from 'firebase'
-  import Home from '../views/Home.vue'
-  import {textsRef} from '../views/Home.vue'
+  import About from '../views/About.vue'
+  import {textsRef} from '../views/About.vue'
   import Header from '../components/Header'
   
 export default {
