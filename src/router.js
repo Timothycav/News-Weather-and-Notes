@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import firebase from 'firebase'
 import Display from './views/Display.vue'
-
+import AddText from './views/AddText.vue'
 Vue.use(Router)
 
 let router = new Router({
