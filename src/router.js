@@ -19,9 +19,7 @@ let router = new Router({
       path: '/display',
       name: 'display',
       component: Display,
-      meta: {
-        requiresAuth: true
-      }
+     
     },
     {
       path: '/addtext',
@@ -49,7 +47,7 @@ router.beforeEach((to, from, next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next('/')
-  else if (!requiresAuth && currentUser) next('about')
+  else if (!requiresAuth && currentUser) next('display')
   else next()
 })
 export default router
