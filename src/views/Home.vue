@@ -4,7 +4,7 @@
   
  <div class="container center">
           <div class="row">
-            <div class="col-md-6 mid">
+            <div class="col-6">
               <h3>News and Weather</h3>
             
                 <ul id="box" class="">
@@ -40,7 +40,7 @@
     </form>
             </div>
 
- <div class="col-md-6 mid">
+ <div class="col-6">
   
      
         <div class="card card-body">
@@ -77,13 +77,7 @@
  
         </div>
 
-  <div class="container center">
-    <div class="row">
-      
-
-
-    </div>
-  </div>
+  
  <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
