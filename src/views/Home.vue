@@ -40,23 +40,8 @@
     </form>
             </div>
 
-          </div>
- 
-        </div>
-
-  <div class="container center">
-    <div class="row">
-       <div class="col-md-6 mid">
-   <!--   <button
-          title="get news"
-          type="button"
-          class="btn btn-info btn-block"
-          value="News"
-          v-on:click="getNews"
-          return: false
-        >
-          Get News
-        </button>-->
+ <div class="col-md-6 mid">
+  
      
         <div class="card card-body">
           <div class="news"></div>
@@ -87,6 +72,16 @@
                <div> <img class="card-img-top" src="" id="news_img4"></div>
         </div>
       </div>
+
+          </div>
+ 
+        </div>
+
+  <div class="container center">
+    <div class="row">
+      
+
+
     </div>
   </div>
  <form>
