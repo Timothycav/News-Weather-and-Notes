@@ -77,7 +77,9 @@
  
         </div>
 
-  
+  <div class="container"> 
+    <div class="row"> 
+      <div class="col-md-6">
  <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -91,6 +93,9 @@
  
   <button type="button" class="btn btn-primary" v-on:click="signIn" >Sign In</button>
 </form>
+</div>
+</div>
+</div>
   </div>
 </template>
  <script>
