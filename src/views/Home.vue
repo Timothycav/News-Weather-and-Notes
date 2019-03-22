@@ -2,9 +2,9 @@
   <div class="about">
     <Header />
   
- <div class="container center">
+ <div class="container">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-4 mb-4">
               <h3>News and Weather</h3>
             
                 <ul id="box" class="">
@@ -40,7 +40,7 @@
     </form>
             </div>
 
- <div class="col-6">
+ <div class="col-12 col-md-4 mb-4">
   
      
         <div class="card card-body">
@@ -50,6 +50,8 @@
               <a href="" class="btn btn-primary" id="link">Full Story Here</a>
                <div> <img class="card-img-top" src="" id="news_img"></div>
         </div>
+ </div>
+ <div class="col-12 col-md-4 mb-4">
          <div class="card card-body">
           <div class="news2"></div>
            <div class="newstitle2 card-title"></div>
@@ -57,6 +59,8 @@
               <a href="" class="btn btn-primary" id="link2">Full Story Here</a>
                <div> <img class="card-img-top" src="" id="news_img2"></div>
         </div>
+</div>
+<div class="col-12 col-md-4 mb-4"> <!--4-->
          <div class="card card-body">
           <div class="news3"></div>
            <div class="newstitle3 card-title"></div>
@@ -64,6 +68,8 @@
               <a href="" class="btn btn-primary" id="link3">Full Story Here</a>
                <div> <img class="card-img-top" src="" id="news_img3"></div>
         </div>
+</div>
+<div class="col-12 col-md-4 mb-4">
          <div class="card card-body">
           <div class="news4"></div>
            <div class="newstitle4 card-title"></div>
@@ -71,11 +77,12 @@
               <a href="" class="btn btn-primary" id="link4">Full Story Here</a>
                <div> <img class="card-img-top" src="" id="news_img4"></div>
         </div>
+</div>
       </div>
 
           </div>
  
-        </div>
+        
 
   <div class="container"> 
     <div class="row"> 
