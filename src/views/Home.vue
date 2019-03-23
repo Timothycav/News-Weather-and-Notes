@@ -4,7 +4,7 @@
   
  <div class="container">
           <div class="row">
-            <div class="col-12 col-md-4 mb-4">
+            <div class="col-12 col-md-4 my-4">
               <h3>News and Weather</h3>
             
                 <ul id="box" class="">
@@ -40,7 +40,7 @@
     </form>
             </div>
 
- <div class="col-12 col-md-4 mb-4">
+ <div class="col-12 col-md-4 my-4">
   
      
         <div class="card card-body">
@@ -51,7 +51,7 @@
                <div> <img class="card-img-top" src="" id="news_img"></div>
         </div>
  </div>
- <div class="col-12 col-md-4 mb-4">
+ <div class="col-12 col-md-4 my-4">
          <div class="card card-body">
           <div class="news2"></div>
            <div class="newstitle2 card-title"></div>
@@ -60,7 +60,7 @@
                <div> <img class="card-img-top" src="" id="news_img2"></div>
         </div>
 </div>
-<div class="col-12 col-md-4 mb-4"> <!--4-->
+<div class="col-12 col-md-4 my-4"> <!--4-->
          <div class="card card-body">
           <div class="news3"></div>
            <div class="newstitle3 card-title"></div>
@@ -69,7 +69,7 @@
                <div> <img class="card-img-top" src="" id="news_img3"></div>
         </div>
 </div>
-<div class="col-12 col-md-4 mb-4">
+<div class="col-12 col-md-4 my-4">
          <div class="card card-body">
           <div class="news4"></div>
            <div class="newstitle4 card-title"></div>
@@ -78,6 +78,16 @@
                <div> <img class="card-img-top" src="" id="news_img4"></div>
         </div>
 </div>
+<div class="col-12 col-md-4 my-4">
+         <div class="card card-body">
+          <div class="news5"></div>
+           <div class="newstitle5 card-title"></div>
+             <div class="description5"></div>
+              <a href="" class="btn btn-primary" id="link5">Full Story Here</a>
+               <div> <img class="card-img-top" src="" id="news_img5"></div>
+        </div>
+</div>
+
       </div>
 
           </div>
@@ -86,7 +96,7 @@
 
   <div class="container"> 
     <div class="row"> 
-      <div class="col-sm-6">
+      <div class="col-12 col-md-4 my-4">
  <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -210,11 +220,11 @@
           let link4= data.articles[3].url;
           document.getElementById("link4").href = link4;
 /*-----------------------------------------------------------------------------*/
-     /*     $('.news5').text(data.articles[4].source.name);
+          $('.news5').text(data.articles[4].source.name);
           $('.newstitle5').text(data.articles[4].title);
           $('.description5').text(data.articles[4].description);
           /*  $('#news_img').src(data.articles[0].urlToImage);*/
-      /*    document.getElementById("news_img5").src=data.articles[4].urlToImage;
+         document.getElementById("news_img5").src=data.articles[4].urlToImage;
 
           let link5= data.articles[4].url;
           document.getElementById("link5").href = link5;
